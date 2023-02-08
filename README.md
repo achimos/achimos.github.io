@@ -1,241 +1,324 @@
-<a href="https://gohugo.io/"><img src="https://raw.githubusercontent.com/gohugoio/gohugoioTheme/master/static/images/hugo-logo-wide.svg?sanitize=true" alt="Hugo" width="565"></a>
-
-A Fast and Flexible Static Site Generator built with love by [bep](https://github.com/bep), [spf13](https://spf13.com/) and [friends](https://github.com/gohugoio/hugo/graphs/contributors) in [Go](https://go.dev/).
-
-[Website](https://gohugo.io) |
-[Forum](https://discourse.gohugo.io) |
-[Documentation](https://gohugo.io/getting-started/) |
-[Installation Guide](https://gohugo.io/getting-started/installing/) |
-[Contribution Guide](CONTRIBUTING.md) |
-[Twitter](https://twitter.com/gohugoio)
-
-[![GoDoc](https://godoc.org/github.com/gohugoio/hugo?status.svg)](https://godoc.org/github.com/gohugoio/hugo)
-[![Tests on Linux, MacOS and Windows](https://github.com/gohugoio/hugo/workflows/Test/badge.svg)](https://github.com/gohugoio/hugo/actions?query=workflow%3ATest)
-[![Go Report Card](https://goreportcard.com/badge/github.com/gohugoio/hugo)](https://goreportcard.com/report/github.com/gohugoio/hugo)
-
-* [Overview](#overview)
-* [Banner Sponsors](#banner-sponsors)
-* [Supported Architectures](#supported-architectures)
-* [Choose How to Install](#choose-how-to-install)
-   * [Install Hugo as Your Site Generator (Binary Install)](#install-hugo-as-your-site-generator-binary-install)
-   * [Build and Install the Binary from Source (Using the Go toolchain)](#build-and-install-the-binary-from-source-using-the-go-toolchain)
-* [The Hugo Documentation](#the-hugo-documentation)
-* [Contributing to Hugo](#contributing-code-to-hugo)
-* [Dependencies](#dependencies)
-
-## Overview
-
-Hugo is a static HTML and CSS website generator written in [Go](https://go.dev/).
-It is optimized for speed, ease of use, and configurability.
-Hugo takes a directory with content and templates and renders them into a full HTML website.
-
-Hugo relies on Markdown files with front matter for metadata, and you can run Hugo from any directory.
-This works well for shared hosts and other systems where you don’t have a privileged account.
-
-Hugo renders a typical website of moderate size in a fraction of a second.
-A good rule of thumb is that each piece of content renders in around 1 millisecond.
-
-Hugo is designed to work well for any kind of website including blogs, tumbles, and docs.
-
-## Banner Sponsors
-<p>&nbsp;</p>
-<p float="left">
-  <a href="https://www.linode.com/?utm_campaign=hugosponsor&utm_medium=banner&utm_source=hugogithub" target="_blank"><img src="https://raw.githubusercontent.com/gohugoio/gohugoioTheme/master/assets/images/sponsors/linode-logo_standard_light_medium.png" width="200" alt="Linode"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://buttercms.com/hugo-cms/?utm_campaign=sponsorship&utm_medium=banner&utm_source=hugogithub" target="_blank"><img src="https://raw.githubusercontent.com/gohugoio/gohugoioTheme/master/assets/images/sponsors/butter-dark.svg?sanitize=true" width="280" alt="ButterCMS"></a>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://www.gravitykit.com/?ref=532&campaign=hugo&utm_campaign=hugosponsor&utm_medium=banner&utm_source=hugogithub" target="_blank"><img src="https://raw.githubusercontent.com/gohugoio/gohugoioTheme/master/assets/images/sponsors/graitykit-dark.svg?sanitize=true" width="160" alt="Gravity Kit"></a>
+<p align="center">
+  <a href="https://www.gatsbyjs.com">
+    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
+  </a>
 </p>
-<p>&nbsp;</p>
+<h1 align="center">
+  Gatsby Starter Landing Page
+</h1>
 
-## Supported Architectures
+Create custom landing pages using Gatsby and Contentful with this starter-theme combo.
+This starter demonstrates how to use Contentful to build dynamic and customizable landing pages with Gatsby and can serve as a starting-point for creating your own custom landing page components that match your visual brand.
 
-Currently, we provide pre-built Hugo binaries for Windows, Linux, FreeBSD, NetBSD, DragonFly BSD, OpenBSD, macOS (Darwin), and [Android](https://gist.github.com/bep/a0d8a26cf6b4f8bc992729b8e50b480b) for x64, i386 and ARM architectures.
+[View the Demo][demo]
 
-Hugo may also be compiled from source wherever the Go compiler tool chain can run, e.g. for other operating systems including Plan 9 and Solaris.
+[demo]: https://landingpagestarter.gatsbyjs.com/
 
-**Complete documentation is available at [Hugo Documentation](https://gohugo.io/getting-started/).**
+## Quick start
 
-## Choose How to Install
+### Prerequisites
 
-If you want to use Hugo as your site generator, simply install the Hugo binaries.
+You will need a [new or existing Contentful space](https://www.contentful.com/help/contentful-101/#step-2-create-a-space) to use this Starter. During installation, you will be asked for the following:
 
-To contribute to the Hugo source code or documentation, you should [fork the Hugo GitHub project](https://github.com/gohugoio/hugo#fork-destination-box) and clone it to your local machine.
+- Contentful Space ID
+  - [Directions to find your Space ID](https://www.contentful.com/help/find-space-id/)
+- Contentful Management API Token
+  - [Directions to generate a Personal Access Token](https://www.contentful.com/faq/personal-access-tokens/)
+- Contentful Delivery API Key and (optional) Preview API Key
+  - In your Contentful space, go to Settings > API Keys.
+  - On the Content delivery / preview tokens tab, click the Add API Key button.
+  - Give the API Key an appropriate name and description.
 
-Finally, you can install the Hugo source code with `go`, build the binaries yourself, and run Hugo that way.
-Building the binaries is an easy task for an experienced `go` getter.
+When you have these available, you will be ready to begin installation
 
-### Install Hugo as Your Site Generator (Binary Install)
+## Installation
 
-Use the [installation instructions in the Hugo documentation](https://gohugo.io/getting-started/installing/).
+You can choose to get going with this starter immediately by deploying to Gatsby Cloud or begin locally on your machine and deploy later.
 
-### Build and Install the Binary from Source (Using the Go toolchain)
+### Gatsby Cloud
 
-#### Prerequisite Tools
+Use Deploy Now to get started in [Gatsby Cloud](https://gatsbyjs.com/products/cloud):
 
-* [Go (we test it with the last 2 major versions; but note that Hugo 0.95.0 only builds with >= Go 1.18.)](https://golang.org/dl/)
+[<img src="https://www.gatsbyjs.com/deploynow.png" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-landing-page)
 
-#### Fetch from GitHub
+This repository uses the `gatsby-provision` convention to allow for automatic CMS content provisioning during the Deploy Now flow in Gatsby Cloud. After you Quick Connect Contentful to your site, you will be given the option to run the `gatsby-provision` script to populate the selected Contentful space with the site's associated content model and content.
 
-To fetch, build and install from the Github source:
+### Locally
 
-```bash
-go install github.com/gohugoio/hugo@latest
+1. **Create a Gatsby site**
+
+   Use the Gatsby CLI to get started locally:
+
+   ```sh
+   npx gatsby new my-landing-page-site https://github.com/gatsbyjs/gatsby-starter-landing-page
+   ```
+
+2. **Run the `gatsby-provision` command**
+
+   Go to your site's root directory, and run the following command:
+
+   ```sh
+   cd my-landing-page-site
+   yarn
+   yarn gatsby-provision
+   ```
+
+   This will run the `gatsby-provision` script. The script requests your Contentful Space ID, Management Token, and Delivery/Preview API Keys, sets up your local environment variables, and imports the Landing Page content model and demo data to your Contentful space.
+
+   Your Contentful space will now contain the content model used by the starter, along with demo content that demonstrates how to use the various content types and landing page components.
+
+3. **Start developing**
+
+   Navigate to your new site's directory and start the development server.
+   **Note:** this starter uses Yarn Workspaces and requires Yarn for development.
+
+   ```sh
+   yarn start
+   ```
+
+4. **Open the source code and start editing!**
+
+   Your site should now be running at <http://localhost:8000>
+
+## What's inside?
+
+A quick look at the files and directories included in this project:
+
+```
+.
+├── README.md
+├── gatsby-config.js
+├── gatsby-node.js
+├── gatsby-theme-landing-page
+│   ├── README.md
+│   ├── gatsby-config.js
+│   ├── index.js
+│   └── src
+│       ├── components
+│       ├── pages
+│       ├── sections
+│       └── styles
+├── src
+│   ├── components
+│   ├── gatsby-theme-landing-page
+│   └── styles.css
+└── .env.example
 ```
 
-If you want to compile with Sass/SCSS support use `--tags extended` and make sure `CGO_ENABLED=1` is set in your go environment. If you don't want to have CGO enabled, you may use the following command to temporarily enable CGO only for hugo compilation:
+1. **`gatsby-config.js`**: [Gatsby config][] file for the starter, which includes `gatsby-theme-landing-page` as a plugin.
+1. **`gatsby-node.js`**: [Gatsby Node][] config file for the starter, which includes GraphQL type definitions for the Contentful content model.
+1. **`gatsby-theme-landing-page`**: The [theme][theme docs] that includes the Contentful source plugin and most of the functionality. See the theme's [`README.md`][theme readme] for more information.
+1. **`src/`**: The source directory for the starter. This includes an example of using the [Shadowing API][] to customize landing pages provided by the theme.
 
-```bash
-CGO_ENABLED=1 go install --tags extended github.com/gohugoio/hugo@latest
-```
+[gatsby config]: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-config/
+[gatsby node]: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-node/
+[theme docs]: https://www.gatsbyjs.com/docs/themes/
+[shadowing api]: https://www.gatsbyjs.com/docs/how-to/plugins-and-themes/shadowing/
 
-## The Hugo Documentation
-
-The Hugo documentation now lives in its own repository, see https://github.com/gohugoio/hugoDocs. But we do keep a version of that documentation as a `git subtree` in this repository. To build the sub folder `/docs` as a Hugo site, you need to clone this repo:
-
-```bash
-git clone git@github.com:gohugoio/hugo.git
-```
-## Contributing code to Hugo
-
-For a complete guide to contributing to Hugo, see the [Contribution Guide](CONTRIBUTING.md).
-
-We welcome contributions to Hugo of any kind including documentation, themes,
-organization, tutorials, blog posts, bug reports, issues, feature requests,
-feature implementations, pull requests, answering questions on the forum,
-helping to manage issues, etc.
-
-The Hugo community and maintainers are [very active](https://github.com/gohugoio/hugo/pulse/monthly) and helpful, and the project benefits greatly from this activity.
-
-## Asking Support Questions
-
-We have an active [discussion forum](https://discourse.gohugo.io) where users and developers can ask questions.
-Please don't use the GitHub issue tracker to ask questions.
-
-## Reporting Issues
-
-If you believe you have found a defect in Hugo or its documentation, use
-the GitHub issue tracker to report the problem to the Hugo maintainers.
-If you're not sure if it's a bug or not, start by asking in the [discussion forum](https://discourse.gohugo.io).
-When reporting the issue, please provide the version of Hugo in use (`hugo version`).
-
-## Dependencies
-
-Hugo stands on the shoulder of many great open source libraries.
-
-If you run `hugo env -v` you will get a complete and up to date list.
-
-In Hugo 0.100.1 that list is, in lexical order:
+### Detailed look into the theme
 
 ```
-cloud.google.com/go/compute="v1.6.1"
-cloud.google.com/go/iam="v0.3.0"
-cloud.google.com/go/storage="v1.22.0"
-cloud.google.com/go="v0.101.0"
-github.com/Azure/azure-pipeline-go="v0.2.3"
-github.com/Azure/azure-storage-blob-go="v0.14.0"
-github.com/Azure/go-autorest/autorest/adal="v0.9.15"
-github.com/Azure/go-autorest/autorest/date="v0.3.0"
-github.com/Azure/go-autorest/autorest="v0.11.20"
-github.com/Azure/go-autorest/logger="v0.2.1"
-github.com/Azure/go-autorest/tracing="v0.6.0"
-github.com/BurntSushi/locker="v0.0.0-20171006230638-a6e239ea1c69"
-github.com/PuerkitoBio/purell="v1.1.1"
-github.com/PuerkitoBio/urlesc="v0.0.0-20170810143723-de5bf2ad4578"
-github.com/alecthomas/chroma="v0.10.0"
-github.com/armon/go-radix="v1.0.0"
-github.com/aws/aws-sdk-go-v2/config="v1.7.0"
-github.com/aws/aws-sdk-go-v2/credentials="v1.4.0"
-github.com/aws/aws-sdk-go-v2/feature/ec2/imds="v1.5.0"
-github.com/aws/aws-sdk-go-v2/internal/ini="v1.2.2"
-github.com/aws/aws-sdk-go-v2/service/internal/presigned-url="v1.3.0"
-github.com/aws/aws-sdk-go-v2/service/sso="v1.4.0"
-github.com/aws/aws-sdk-go-v2/service/sts="v1.7.0"
-github.com/aws/aws-sdk-go-v2="v1.9.0"
-github.com/aws/aws-sdk-go="v1.43.5"
-github.com/aws/smithy-go="v1.8.0"
-github.com/bep/clock="v0.3.0"
-github.com/bep/debounce="v1.2.0"
-github.com/bep/gitmap="v1.1.2"
-github.com/bep/goat="v0.5.0"
-github.com/bep/godartsass="v0.14.0"
-github.com/bep/golibsass="v1.1.0"
-github.com/bep/gowebp="v0.1.0"
-github.com/bep/overlayfs="v0.6.0"
-github.com/bep/tmc="v0.5.1"
-github.com/clbanning/mxj/v2="v2.5.5"
-github.com/cli/safeexec="v1.0.0"
-github.com/cpuguy83/go-md2man/v2="v2.0.1"
-github.com/disintegration/gift="v1.2.1"
-github.com/dlclark/regexp2="v1.4.0"
-github.com/dustin/go-humanize="v1.0.0"
-github.com/evanw/esbuild="v0.14.42"
-github.com/frankban/quicktest="v1.14.3"
-github.com/fsnotify/fsnotify="v1.5.4"
-github.com/getkin/kin-openapi="v0.94.0"
-github.com/ghodss/yaml="v1.0.0"
-github.com/go-openapi/jsonpointer="v0.19.5"
-github.com/go-openapi/swag="v0.19.5"
-github.com/gobuffalo/flect="v0.2.5"
-github.com/gobwas/glob="v0.2.3"
-github.com/gohugoio/go-i18n/v2="v2.1.3-0.20210430103248-4c28c89f8013"
-github.com/gohugoio/locales="v0.14.0"
-github.com/gohugoio/localescompressed="v1.0.1"
-github.com/golang-jwt/jwt/v4="v4.0.0"
-github.com/golang/groupcache="v0.0.0-20210331224755-41bb18bfe9da"
-github.com/golang/protobuf="v1.5.2"
-github.com/google/go-cmp="v0.5.8"
-github.com/google/uuid="v1.3.0"
-github.com/google/wire="v0.5.0"
-github.com/googleapis/gax-go/v2="v2.3.0"
-github.com/googleapis/go-type-adapters="v1.0.0"
-github.com/gorilla/websocket="v1.5.0"
-github.com/hairyhenderson/go-codeowners="v0.2.3-0.20201026200250-cdc7c0759690"
-github.com/inconshreveable/mousetrap="v1.0.0"
-github.com/jdkato/prose="v1.2.1"
-github.com/jmespath/go-jmespath="v0.4.0"
-github.com/kr/pretty="v0.3.0"
-github.com/kr/text="v0.2.0"
-github.com/kyokomi/emoji/v2="v2.2.9"
-github.com/mailru/easyjson="v0.0.0-20190626092158-b2ccc519800e"
-github.com/mattn/go-ieproxy="v0.0.1"
-github.com/mattn/go-isatty="v0.0.14"
-github.com/mattn/go-runewidth="v0.0.9"
-github.com/mitchellh/hashstructure="v1.1.0"
-github.com/mitchellh/mapstructure="v1.5.0"
-github.com/muesli/smartcrop="v0.3.0"
-github.com/niklasfasching/go-org="v1.6.2"
-github.com/olekukonko/tablewriter="v0.0.5"
-github.com/pelletier/go-toml/v2="v2.0.0-beta.7.0.20220408132554-2377ac4bc04c"
-github.com/rogpeppe/go-internal="v1.8.1"
-github.com/russross/blackfriday/v2="v2.1.0"
-github.com/rwcarlsen/goexif="v0.0.0-20190401172101-9e8deecbddbd"
-github.com/sanity-io/litter="v1.5.5"
-github.com/sass/libsass="3.6.5"
-github.com/spf13/afero="v1.8.2"
-github.com/spf13/cast="v1.5.0"
-github.com/spf13/cobra="v1.4.0"
-github.com/spf13/fsync="v0.9.0"
-github.com/spf13/jwalterweatherman="v1.1.0"
-github.com/spf13/pflag="v1.0.5"
-github.com/tdewolff/minify/v2="v2.11.5"
-github.com/tdewolff/parse/v2="v2.5.31"
-github.com/webmproject/libwebp="v1.2.0"
-github.com/yuin/goldmark="v1.4.12"
-go.opencensus.io="v0.23.0"
-go.uber.org/atomic="v1.9.0"
-gocloud.dev="v0.24.0"
-golang.org/x/crypto="v0.0.0-20211108221036-ceb1ce70b4fa"
-golang.org/x/image="v0.0.0-20211028202545-6944b10bf410"
-golang.org/x/net="v0.0.0-20220425223048-2871e0cb64e4"
-golang.org/x/oauth2="v0.0.0-20220411215720-9780585627b5"
-golang.org/x/sync="v0.0.0-20210220032951-036812b2e83c"
-golang.org/x/sys="v0.0.0-20220422013727-9388b58f7150"
-golang.org/x/text="v0.3.7"
-golang.org/x/tools="v0.1.10"
-golang.org/x/xerrors="v0.0.0-20220411194840-2f41105eb62f"
-google.golang.org/api="v0.76.0"
-google.golang.org/genproto="v0.0.0-20220426171045-31bebdecfb46"
-google.golang.org/grpc="v1.46.0"
-google.golang.org/protobuf="v1.28.0"
-gopkg.in/yaml.v2="v2.4.0"
+├── gatsby-theme-landing-page
+│   ├── gatsby-config.js
+│   ├── index.js
+│   └── src
+│       ├── components
+│       ├── pages
+│       ├── sections
+│       └── styles
 ```
+
+This starter uses `gatsby-theme-landing-page` to source content from Contentful and create block-based landing pages.
+The theme is included in this repo's Yarn Workspace for local development.
+
+1. **`src/sections`**: Each landing page in Contentful determines which components it uses and controls the order of these sections.
+   The components rendered by the theme are in `src/sections`. Each component in this directory represents one Contentful `LandingPageSection` node.
+1. **`src/components`**: This directory includes shared components, such as buttons, links, head, and other utilities.
+1. **`src/styles`**: This directory includes base styles and CSS custom properties.
+1. **`src/pages`**: This includes one [File System Routing][] page for rendering each landing page.
+1. **`index.js`**: Exports components that can be used independently from the theme.
+
+[file system routing]: https://www.gatsbyjs.com/docs/reference/routing/file-system-route-api/
+
+### Theme updates
+
+You can choose to either leave this directory in your site, or remove it to install and use the published version of the theme from npm.
+If you install the theme from npm, your site can receive upstream updates and bug fixes in the future.
+
+## Installing the theme in an existing site
+
+Because this starter is built with a Gatsby theme, you can leverage its functionality in an existing site without cloning this starter.
+For more information, see the theme's [README.md][theme readme].
+
+## Adding a layout
+
+By default, the theme's landing pages do not include a wrapping layout. This is to allow you customize the header, footer and other wrapping content to match the rest of your site.
+This starter shadows the theme's layout with the `src/gatsby-theme-landing-page/components/layout.js` file, which renders the `src/components/layout.js` file. Edit this file to customize the shared layout for all landing pages.
+
+```js
+// example src/gatsby-theme-landing-page/components/layout.js
+export { default } from "../../components/custom-layout";
+```
+
+## Customizing the typography and colors
+
+To customize the built-in components' typography, colors, and layout, edit the `src/gatsby-theme-landing-page/styles/variables.module.css` file.
+
+```css
+/* example src/gatsby-theme-landing-page/styles/variables.module.css */
+.root {
+  /* typography */
+  --font: "Inter", sans-serif;
+  --font-heading: "Poppins", sans-serif;
+  --line-height: 1.5;
+  --font-size-1: 12px;
+  --font-size-2: 14px;
+  --font-size-3: 16px;
+  --font-size-4: 24px;
+  --font-size-5: 32px;
+  --font-size-6: 48px;
+  --letter-spacing-caps: 0.03em;
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+  /* colors */
+  --text-color: black;
+  --text-color-secondary: #555;
+  --background-color: white;
+  --link-color: #07c;
+  --link-hover-color: #05a;
+  --primary-color: #08d;
+  --secondary-color: #70c;
+  --button-color: white;
+  --button-background-color: #07c;
+  --button-hover-color: #05a;
+  --button-secondary-color: #07c;
+  --button-secondary-background-color: white;
+  --button-secondary-hover-color: rgb(215, 232, 250);
+  /* layout */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 32px;
+  --space-5: 64px;
+  --space-6: 128px;
+  --max-width: 1024px;
+  --max-width-narrow: 768px;
+  --border-radius: 4px;
+  /* shadows */
+  --box-shadow-raised: 0px 1px 2px rgba(46, 41, 51, 0.08), 0px 2px 4px rgba(71, 63, 79, 0.08);
+  --box-shadow-floating: 0px 2px 4px rgba(46, 41, 51, 0.08), 0px 4px 8px rgba(71, 63, 79, 0.16);
+}
+```
+
+If you decide to use a different webfont, be sure to also update `gatsby-browser.js` to load the font files you need and remove any you don't need.
+
+## Customizing section components
+
+To customize a landing page section component, create a file in `src/gatsby-theme-landing-page/sections/` with the same name used in the theme. This will shadow the built-in component to completely override it.
+
+As an example to get you started, see `src/gatsby-theme-landing-page/sections/call-to-action.js`, which is a customized version of the CallToAction component built into the theme.
+Feel free to edit this component directly or follow this pattern to customize other section components.
+
+## Adding new section components
+
+To add more components and extend the functionality, follow these steps:
+
+1. Edit the `src/gatsby-theme-landing-page/sections/index.js` file
+   and add named exports for the additional components you'd like to use. In the below example, we add a new hero component called SuperHero
+
+   ```js
+   // src/gatsby-theme-landing-page/sections/index.js
+   // This file shadows gatsby-theme-landing-page's sections index.
+   export { default as Hero } from "gatsby-theme-landing-page/src/sections/hero";
+   export { default as Features } from "gatsby-theme-landing-page/src/sections/features";
+   export { default as Copy } from "gatsby-theme-landing-page/src/sections/copy";
+   export { default as CallToAction } from "gatsby-theme-landing-page/src/sections/call-to-action";
+   export { default as Benefits } from "gatsby-theme-landing-page/src/sections/benefits";
+   export { default as Testimonial } from "gatsby-theme-landing-page/src/sections/testimonial";
+
+   // This is a new section component that extends the functionality of the theme.
+   export { default as SuperHero } from "../../components/super-hero";
+   ```
+
+2. Create your component in `src/components`
+
+   ```js
+   // src/components/super-hero.js
+   export default function SuperHero({ heading, secondaryHeading, content }) {
+     return (
+       // {Component code}
+     );
+   }
+   ```
+
+3. Update your Contentful space's content model to reflect these changes by ensuring the LandingPageSection's _Component_ field validation includes the new component name.
+
+   ![contentful component validation](https://user-images.githubusercontent.com/1227297/145876531-b0658f9c-b6ed-428a-be99-1cd29029f0a6.png)
+
+This starter includes an example section component in `src/components/super-hero.js`. Feel free to edit, rename, or use this as an reference when creating other custom section components.
+
+### GraphQL page query
+
+Each page in the theme uses the following query for data. Use this as a reference for the props passed into each section component.
+
+```graphql
+query ($id: String!) {
+  page: contentfulLandingPage(id: { eq: $id }) {
+    title
+    description
+    image {
+      gatsbyImageData(layout: CONSTRAINED)
+    }
+    sections {
+      id
+      component
+      heading
+      secondaryHeading
+      content {
+        id
+        primaryText {
+          childMarkdownRemark {
+            html
+          }
+        }
+        secondaryText {
+          childMarkdownRemark {
+            html
+          }
+        }
+        image {
+          gatsbyImageData(layout: CONSTRAINED)
+        }
+        links {
+          id
+          href
+          text
+        }
+      }
+    }
+  }
+}
+```
+
+### Schema Customization API
+
+To prevent errors from occurring when changes are made to the Contentful content model, this starter includes GraphQL type definitions in its [`gatsby-node.js`](gatsby-node.js) file.
+If you decide to make changes to your content model, be sure to update the type definitions in this file, otherwise the starter might not be able to query new or renamed fields.
+
+To read more about customizing, see the theme's [README.md][theme readme].
+
+## 🎓 Learning Gatsby
+
+Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.com/). Here are some places to start:
+
+- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.com/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
+- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.com/docs/).**
+
+## 💫 Deploy
+
+[Build, Deploy, and Host On The Only Cloud Built For Gatsby](https://www.gatsbyjs.com/cloud/)
+
+Gatsby Cloud is an end-to-end cloud platform specifically built for the Gatsby framework that combines a modern developer experience with an optimized, global edge network.
+
+[theme readme]: gatsby-theme-landing-page/README.md
